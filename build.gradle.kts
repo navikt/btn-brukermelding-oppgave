@@ -9,6 +9,7 @@ val kafkaVersion = "2.3.0"
 val confluentVersion = "5.3.0"
 val commonVersion = "9"
 val gsonVersion = "2.8.6"
+val micrometerVersion = "1.3.0"
 
 plugins {
     id("org.jetbrains.kotlin.jvm") version "1.3.50"
@@ -45,6 +46,7 @@ dependencies {
     implementation("io.confluent:kafka-json-serializer:$confluentVersion")
     implementation("no.nav.btn:btn-common:$commonVersion")
     implementation("com.google.code.gson:gson:$gsonVersion")
+    implementation("io.micrometer:micrometer-registry-prometheus:$micrometerVersion")
 
     testCompile("org.jetbrains.kotlin:kotlin-test")
     testCompile("org.jetbrains.kotlin:kotlin-test-junit")
