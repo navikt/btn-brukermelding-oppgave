@@ -7,7 +7,7 @@ val logstashVersion = "5.1"
 val konfigVersion = "1.6.10.0"
 val kafkaVersion = "2.3.0"
 val confluentVersion = "5.3.0"
-val commonVersion = "9"
+val commonVersion = "10"
 val gsonVersion = "2.8.6"
 val micrometerVersion = "1.3.0"
 
