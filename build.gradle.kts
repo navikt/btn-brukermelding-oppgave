@@ -1,15 +1,6 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val ktorVersion = "1.2.5"
-val prometheusVersion = "0.7.0"
-val logbackVersion = "1.2.3"
-val logstashVersion = "5.1"
-val konfigVersion = "1.6.10.0"
-val kafkaVersion = "2.3.0"
-val confluentVersion = "5.3.0"
-val commonVersion = "11"
-val gsonVersion = "2.8.6"
-val micrometerVersion = "1.3.0"
+val btnBomVersion = "3"
 
 plugins {
     id("org.jetbrains.kotlin.jvm") version "1.3.50"
@@ -35,21 +26,11 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
-    implementation("io.ktor:ktor-server-netty:$ktorVersion")
-    implementation("io.ktor:ktor-gson:$ktorVersion")
-    implementation("io.prometheus:simpleclient_hotspot:$prometheusVersion")
-    implementation("io.prometheus:simpleclient_common:$prometheusVersion")
-    implementation("ch.qos.logback:logback-classic:$logbackVersion")
-    implementation("net.logstash.logback:logstash-logback-encoder:$logstashVersion")
-    implementation("com.natpryce:konfig:$konfigVersion")
-    implementation("org.apache.kafka:kafka-clients:$kafkaVersion")
-    implementation("io.confluent:kafka-json-serializer:$confluentVersion")
-    implementation("no.nav.btn:btn-common:$commonVersion")
-    implementation("com.google.code.gson:gson:$gsonVersion")
-    implementation("io.micrometer:micrometer-registry-prometheus:$micrometerVersion")
+    implementation(platform("no.nav.btn:btn-bom:$btnBomVersion"))
+    implementation("no.nav.btn:btn-common")
 
-    testCompile("org.jetbrains.kotlin:kotlin-test")
-    testCompile("org.jetbrains.kotlin:kotlin-test-junit")
+    testImplementation("org.jetbrains.kotlin:kotlin-test")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
 }
 
 application {
